@@ -1,0 +1,76 @@
+{
+  "expo": {
+    "name": "Garnet",
+    "slug": "garnet-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#8B5CF6"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.garnet.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Garnet needs camera access to record videos and take photos",
+        "NSMicrophoneUsageDescription": "Garnet needs microphone access to record audio",
+        "NSPhotoLibraryUsageDescription": "Garnet needs photo library access to save and load media",
+        "NSPhotoLibraryAddUsageDescription": "Garnet needs permission to save media to your photo library"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#8B5CF6"
+      },
+      "package": "com.garnet.app",
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_MEDIA_IMAGES",
+        "READ_MEDIA_VIDEO",
+        "READ_MEDIA_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Garnet to access your camera",
+          "microphonePermission": "Allow Garnet to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow Garnet to access your photos",
+          "savePhotosPermission": "Allow Garnet to save photos",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ],
+    "scheme": "garnet",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "your-project-id"
+      }
+    }
+  }
+}
